@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ふくおか餃子FES2030のお問い合わせ送信完了ページです。">
+    <title>送信完了しました | ふくおか餃子FES</title>
+    <!-- ファビコン -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thanks.css">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Vue2の読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header-component
+        :is-nav-open="isNavOpen"
+        @close-nav="closeNav"
+        @toggle-nav="toggleNav"
+        ></header-component>
+        <div id="thanks" class="wrapper">
+            <h1 class="section-title"><img src="img/gyoza_logo.png" alt="餃子のロゴ">送信完了しました</h1>
+            <p>お問い合わせいただき、ありがとうございます。<br>
+            内容を確認のうえ、折り返しご返信いたします。<br>
+            ご返信まで今しばらくお待ちください。</p>
+            <a href="index.html" class="thanks-btn">
+                <i class="fa-solid fa-arrow-left"></i>トップへもどる
+            </a>
+        </div>
+        <footer-component></footer-component>
+    </div>
+    <script src="js/component.js"></script>
+</body>
+</html>

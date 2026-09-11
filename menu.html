@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="「ふくおか餃子FES 2030」の餃子メニューをご紹介。博多ひとくち餃子をはじめ、ご当地餃子や個性豊かな創作餃子など、多彩なメニューをチェックしてお気に入りの一皿を見つけよう！">
+    <title>メニュー | ふくおか餃子FES</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Maru+Gothic&display=swap"rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header-component
+            :is-nav-open="isNavOpen"
+            @close-nav="closeNav"
+            @toggle-nav="toggleNav">
+        </header-component>
+<div>※本サイトの内容は架空のイベントです</div>
+        <main>
+            <section class="menu">
+                <h1 class="section-title">
+                    <img src="img/gyoza_logo.png" alt="餃子">メニュー
+                </h1>
+                <div class="menu-wrapper">
+                    <div v-for="menu in menuList" :key="menu.id" class="menu-card">
+                        <img :src="'img/' + menu.image" :alt="menu.name">
+                        <p class="shop">{{ menu.shop }}</p>
+                        <p class="red">{{ menu.name }}</p>
+                        <p class="price">{{ menu.price }}</p>
+                        <a href="#" @click.prevent="showModal(menu)">詳しく見る</a>
+                    </div>
+                </div>
+            </section>
+
+            <div v-if="isModalOpen" class="modal-bg" @click.self="closeModal">
+                <div class="modal">
+                    <button type="button" class="modal-close" @click="closeModal">×</button>
+                    <img class="modal-image" :src="'img/' + selectedMenu.image" :alt="selectedMenu.name">
+                    <h2>{{ selectedMenu.name }}</h2>
+                    <p class="modal-shop">{{ selectedMenu.shop }}</p>
+                    <p class="modal-price">{{ selectedMenu.price }}</p>
+                    <h3>商品情報</h3>
+                    <p>{{ selectedMenu.text }}</p>
+                    <h3>店舗情報</h3>
+                    <p>{{ selectedMenu.information }}</p>
+                </div>
+            </div>
+        </main>
+        <footer-component></footer-component>
+    </div>
+    <script src="js/menu.js"></script>
+    <script src="js/component.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="「ふくおか餃子FES 2030」のよくある質問・お問い合わせページです。イベントに関するよくある質問をご案内。お問い合わせも受け付けています。">
+    <title>よくある質問・お問い合わせ | ふくおか餃子FES</title>
+    <!-- ファビコン -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Vue2の読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header-component
+        :is-nav-open="isNavOpen"
+        @close-nav="closeNav"
+        @toggle-nav="toggleNav">
+        </header-component>
+<div>※本サイトの内容は架空のイベントです</div>
+        <!-- FAQ箇所 -->
+        <section id="faq">
+            <div class="wrapper faq-layout">
+            <h2 class="section-title"><img src="img/gyoza_logo.png" alt="餃子のロゴ">よくあるご質問</h2>
+                    <accordion-component :faq-list="faqData"></accordion-component>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title"><img src="img/gyoza_logo.png" alt="餃子のロゴ">お問い合わせ</h2>
+            <p class="contact-lead">
+                ふくおか餃子FESに関するご質問は、以下のフォームよりお問い合わせください。
+            </p>
+            <div class="wrapper">
+                <form action="https://ssgform.com/s/lPAVJaSgixOM" method="post" class="contact-form" novalidate>
+                    <div class="form-item">
+                        <label for="name">
+                            お名前
+                            <span class="required">必須</span>
+                        </label>
+                        <div class="form-input">
+                            <input type="text" id="name" name="name"
+                            v-model="userName" :class="{ 'is-invalid': nameError }" @input="validateName" required>
+                            <p class="error-message" v-if="nameError">
+                                {{nameError}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="email">
+                            メールアドレス
+                            <span class="required">必須</span>
+                        </label>
+                        <div class="form-input">
+                            <input type="email" id="email" name="email"
+                            v-model="email" :class="{ 'is-invalid': emailError }" @input="validateEmail" required>
+                            <p class="error-message" v-if="emailError">
+                                {{emailError}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="tel">
+                            電話番号
+                            <span class="optional">任意</span>
+                        </label>
+                        <div class="form-input">
+                            <input type="tel" id="tel" name="tel"
+                            v-model="tel" placeholder="090-1234-5678">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="category">
+                            お問い合わせ種別
+                            <span class="required">必須</span>
+                        </label>
+                        <div class="form-input">
+                            <div class="select-wrapper">
+                                <select id="category" name="category"
+                                v-model="category" :class="{ 'is-invalid': categoryError }" @change="validateCategory" required>
+                                    <option value="" disabled>選択してください</option>
+                                    <option value="event">開催について</option>
+                                    <option value="ticket">チケットについて</option>
+                                    <option value="menu">出店・メニューについて</option>
+                                    <option value="access">会場・アクセスについて</option>
+                                    <option value="media">取材・メディア掲載について</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+                            <p class="error-message" v-if="categoryError">
+                                {{categoryError}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="message">
+                            お問い合わせ内容
+                            <span class="required">必須</span>
+                        </label>
+                        <div class="form-input">
+                            <textarea id="message" name="message" rows="8"
+                            v-model="message" :class="{ 'is-invalid': messageError }" @input="validateMessage" required></textarea>
+                            <p class="error-message" v-if="messageError">
+                                {{messageError}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="privacy-check">
+                        <label>
+                            <input type="checkbox" name="privacy"
+                            v-model="agreed" @change="validateAgreed" required>
+                            <span>
+                                個人情報の取り扱いに同意する
+                            </span>
+                        </label>
+                        <p class="error-message" v-if="agreedError">
+                            {{agreedError}}
+                        </p>
+                    </div>
+                    <div class="form-btn">
+                        <button type="submit" :disabled="!canSubmit">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer-component></footer-component>
+    </div>
+
+    <script src="js/menu.js"></script>
+    <script src="js/component.js"></script>
+</body>
+</html>

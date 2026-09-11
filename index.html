@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="福岡・長浜公園で「ふくおか餃子FES 2030」を4月27日〜5月12日に開催！ご当地餃子から個性豊かな創作餃子まで、多彩な味が大集合。入場無料で楽しめる福岡の餃子フェスです。">
+    <title>ふくおか餃子FES｜福岡・長浜公園で開催の餃子フェス</title>
+    <!-- ファビコン -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Vue2の読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <header-component
+        :is-nav-open="isNavOpen"
+        @close-nav="closeNav"
+        @toggle-nav="toggleNav"
+        ></header-component>
+        <div>※本サイトの内容は架空のイベントです</div>
+    <main>
+       
+        <section>
+            <figure>
+                <!-- 背景画像とロゴまとめ -->
+                <img class="mv-bg" src="img/mv_bg.jpg" alt="鉄板の上で香ばしく焼きあがる餃子">
+                <div class="word-logo">
+                    
+                    <h1 class="mv-logo">
+                        <img src="img/mv_logo.png" alt="ふくおか餃子FES 2030">
+                    </h1>
+                    <!-- キャッチコピーPCロゴの左、SPロゴの下へ -->
+                    <p class="catch-copy tategaki">
+                        <span>ひとくちごとに、</span>
+                        <span>　　　新しい体験。</span>
+                    </p>
+                </div>
+            <!-- 入場無料と日付のdiv -->
+            <div class="enter-date">
+                <p class="enter">入場無料</p>
+                <div>
+                    <p class="period">
+                    <time class="year" datetime="2030-04-27">2030</time>
+                    <time class="day" datetime="2030-04-27/2030-05-12">4.27~5.12</time>
+                    </p>
+                </div>
+            </div>
+            </figure>
+        </section>
+
+        <section class="pc-lead-copy">
+            <img src="img/mv_cloud.png" alt="">
+            <h2>福岡の餃子文化が一堂に集結！</h2>
+            <p>
+                定番のご当地餃子から、驚きの創作餃子まで、ここはまるで餃子のテーマパーク。<br>
+                香ばしく焼き上げられた皮のパリッとした食感、ジューシーな肉汁、<br>
+                個性あふれるタレのハーモニー…<br>
+                ひとくち食べるたびに、新しい味、新しい驚き、新しい発見が待っています。<br>
+                さあ、あなたもこの美味しい冒険に出かけませんか？
+            </p>
+            <img src="img/mv_cloud.png" alt="">
+            
+        </section>
+
+        <section class="sp-lead-copy">
+            <img src="img/mv_cloud.png" alt="">
+            <h2>福岡の餃子文化が一堂に集結！</h2>
+            <p>
+                定番のご当地餃子から、驚きの創作餃子まで、ここはまるで餃子のテーマパーク。<br>
+                香ばしく焼き上げられた皮のパリッとした食感、ジューシーな肉汁、<br>
+                個性あふれるタレのハーモニー…<br>
+                ひとくち食べるたびに、新しい味、新しい驚き、新しい発見が待っています。<br>
+                さあ、あなたもこの美味しい冒険に出かけませんか？
+            </p>
+            <img src="img/mv_cloud.png" alt="">
+        </section>
+    <!-- 開催概要 -->
+ <section id="access">
+        <h2 class="section-title">
+            <img src="./img/gyoza_logo.png" alt="餃子のアイコン">開催概要
+        </h2>
+        <div class="access-container wrapper">
+            <div class="access-info">
+                <table class="access-table">
+                    <tr>
+                        <th class="access-th">開催日時</th>
+                        <td class="access-td-date">2030年4月27日[日]～5月12日[日]</td>
+                    </tr>
+                    <tr>
+                        <th class="access-th">営業時間</th>
+                        <td class="access-td-time">
+                            <p>平日 16:00 ~ 22:00<br>
+                                土日祝 11:00 ~ 22:00</p>
+                            <p class="access-note">最終入場受付 21:00 L.O.（ラストオーダー）21:15</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="access-th">場所</th>
+                        <td class="access-td-place">長浜公園</td>
+                    </tr>
+                    <tr>
+                        <th class="access-th">アクセス</th>
+                        <td class="access-td-access">地下鉄天神駅・西鉄天神駅から徒歩10分<br>
+                            西鉄バス「長浜一丁目」「福祉センター前［浜の町病院入口］」徒歩2分</td>
+                    </tr>
+                    <tr>
+                        <th class="access-th">料金</th>
+                        <td class="access-td-price">
+                            <p>入場料無料</p>
+                            <p class="access-note">※飲食代別途（前売り食事券、現金、各種電子マネー、QRコード決済利用可能）</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="access-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4548790662716!2d130.3895165729253!3d33.59350018289795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918916ac1a97%3A0x38ef1af8385772cc!2z6ZW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1787203008469!5m2!1sja!2sjp"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- メニュー -->
+    <section id="menu" class="wrapper">
+        <h2 class="section-title">
+            <img class="icon" src="./img/gyoza_logo.png" alt="餃子のアイコン">メニュー
+        </h2>
+    <div class="menu-list">
+        <ul>
+        <li v-for="item in menuList" :key="item.id" class="menu-item">
+        <a href="menu.html"><img class="menu-image" :src="`./img/${item.image}`" :alt="item.name"></a>
+        </li>
+        </ul>
+    </div>
+            <a href="menu.html" class="menu-btn">メニュー一覧を見る</a>
+    </section>
+
+
+    <div class="news-table">
+      <h2 class="section-title" id="news"><img src="./img/gyoza_logo.png" alt="icon">お知らせ</h2>
+      <div class="lists">
+        <table class="news-list">
+            <tr>
+              <th class="date">2030.3.10（日）</th>
+              <td>出店者インタビュー　ついに出店！「博多水餃子 とり白湯 玄」</td>
+            </tr>
+            <tr>
+              <th class="date">2030.3.1（金）</th>
+              <td>出店者インタビュー　本格四川料理の名店「辛味房 赤龍」</td>
+            </tr>
+            <tr>
+              <th class="date">2030.2.25（月）</th>
+              <td>出店者インタビュー　博多区で人気の「博多ぎょうざ堂」</td>
+            </tr>
+            <tr>
+              <th class="date">2030.2.23（土）</th>
+              <td>出店企業様大募集！</td>
+            </tr>
+            <tr>
+              <th class="date">2030.2.16（土）</th>
+              <td>ふくおか餃子FES開催決定！</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 料金セクション -->
+    <section class="price-section">
+        <div class="price-container">
+            <h2 class="section-title">
+            <img src="./img/gyoza_logo.png" alt="icon" id="ticket">
+            料 金
+            </h2>
+
+            <!-- チケット料金 -->
+            <div class="price-list">
+            <div class="price-item">
+                <span class="price-badge">当日券</span>
+                <span class="price-value">2,000 <small>円</small></span>
+            </div>
+            <div class="price-item">
+                <span class="price-badge">前売り券</span>
+                <span class="price-value">1,500 <small>円</small></span>
+            </div>
+            </div>
+
+            <!-- キャッシュレス決済 枠 -->
+            <div class="price-box">
+            <div class="cashless-tag">ご利用可能なキャッシュレス決済</div>
+            <div class="cashless-img">
+                <img src="./img/price.png" alt="ご利用可能なキャッシュレス決済一覧">
+            </div>
+            </div>
+
+            <!-- 前売り券購入ボタン -->
+            <a href="#" class="ticket-btn">
+            前売り券を購入する
+            </a>
+        </div>
+    </section>
+
+    </main>
+    <footer-component></footer-component>
+    </div>
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/component.js"></script>
+</body>
+</html>
